@@ -18,6 +18,9 @@ public class MyLinkedList {
     }
 
     public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
         Node current = head;
         if (index == 0) {
             head = current.next;

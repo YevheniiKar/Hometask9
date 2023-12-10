@@ -15,6 +15,9 @@ public class MyArrayList {
     }
 
     public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
         System.arraycopy(data, index + 1, data, index, size - index - 1);
         data[--size] = null;
     }
